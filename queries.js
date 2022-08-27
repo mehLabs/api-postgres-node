@@ -32,7 +32,8 @@ const createUser = (request,response) => {
         if (error){
             throw error;
         }
-        response.status(201).send(`Usuario añadido con ID: ${results.rows[0].id}`)
+        console.log("Se creó un usuario: "+JSON.stringify( results.rows))
+        response.status(201).send(results.rows[0])
     })
 }
 

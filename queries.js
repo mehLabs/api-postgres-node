@@ -21,6 +21,7 @@ const getUserById = (request,response) => {
         if (error){
             throw error
         }
+        console.log("Se pidió un usuario: "+JSON.stringify( results.rows))
         response.status(200).json(results.rows);
     })
 }
@@ -45,6 +46,7 @@ const updateUser = (request,response) => {
         if (error){
             throw error
         }
+        console.log("Se modificó un usuario: "+JSON.stringify( results.rows))
         response.status(200).send(`Usuario con ID: ${id} modificado`)
     })
 }
@@ -56,6 +58,7 @@ const deleteUserById = (request,response) => {
         if (error){
             throw error
         }
+        console.log("Se eliminó un usuario: "+JSON.stringify(id))
         response.status(200).send(`Usuario con ID: ${id} eliminado correctamente.`)
     })
 }
